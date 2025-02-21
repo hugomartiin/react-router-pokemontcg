@@ -6,9 +6,9 @@ export default [
 
         layout("layouts/header.tsx", [
             route("cards","routes/cards.tsx"),
-            route("cards","routes/favourites.tsx"),
-            route("cards","routes/series.tsx"),
-            route("cards","routes/sets.tsx"),
+            route("favouites","routes/favourites.tsx"),
+            route("series","routes/series.tsx"),
+            route("sets","routes/sets.tsx"),
         ]),
     ])
 ] satisfies RouteConfig;
