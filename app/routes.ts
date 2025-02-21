@@ -6,7 +6,7 @@ export default [
 
         layout("layouts/header.tsx", [
             route("cards","routes/cards.tsx"),
-            route("favouites","routes/favourites.tsx"),
+            route("favourites","routes/favourites.tsx"),
             route("series","routes/series.tsx"),
             route("sets","routes/sets.tsx"),
         ]),
