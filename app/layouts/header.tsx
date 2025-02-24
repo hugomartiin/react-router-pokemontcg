@@ -2,21 +2,11 @@ import React, { useEffect } from 'react'
 import { Link, Outlet } from 'react-router'
 
 function header() {
-  let windowWidth = window.innerWidth;
-
-  useEffect(() => {
-    console.log(windowWidth);
-    
-      // document.getElementById("navbarRoutes")?.classList.toggle("hidden");
-
-      document.body.style.overflow = 'unset';
-  }
-  , [window.innerWidth]);
 
   return (
     <>
       <header>
-        <nav className=" bg-red-500 p-6 flex flex-col md:flex-row items-center justify-around gap-8">	
+        <nav className=" bg-primary p-6 flex flex-col md:flex-row items-center justify-around gap-8">	
           <div className="logoContainer w-[50%] md:w-[15%]">
             <Link to={'/'} className=""><img src="img/logo.png" alt="logo_pokemon" className='max-w-full mx-auto'/></Link>
           </div>
