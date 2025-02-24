@@ -61,16 +61,21 @@ export async function getSets(): Promise<SetBrief[] | null> {
     }
 }
 
-export async function getSetsBySeriesId(id: string): Promise<SetBrief[] | null> {
+export async function getSetsBySeriesId(id: string): Promise<SetBrief[]> {
     try {
         const response = await fetch(`${API_URL}/series/${id}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const data = await response.json();
-        return data;
+        return Array.isArray(data.sets) ? data.sets : []; 
     } catch (error) {
-        console.error("Error:", error);
-        return null;
+        console.error("Error fetching sets by series ID:", error);
+        return [];
     }
 }
+
+
 
 export async function getFilteredCards(
     set: string = "base1",

@@ -1,10 +1,12 @@
 import React from 'react'
-import { Outlet } from 'react-router'
+import { Outlet, Link } from 'react-router'
 
 function header() {
   return (
     <>
       <div>header</div>
+      <Link to="series">Series</Link>
+      <Link to="sets">Sets</Link>
       <Outlet />
     </>
   )
