@@ -31,10 +31,11 @@ export function HydrateFallback() {
 function Series() {
   const loaderData: { series: SerieBrief[] } = useLoaderData();
   const series = loaderData.series;
-  
-  return (
-    <div className="flex flex-col items-center justify-center text-white transition-colors duration-500">
 
+  return (
+    <div className="background-image flex flex-col items-center justify-center text-white transition-colors duration-500">
+
+      <h1 className="pt-5 text-4xl font-bold mb-4">All Series</h1>
 
       <CardList items={series} type="series" />
 
