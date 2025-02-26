@@ -43,9 +43,9 @@ function Sets() {
   const { id } = useParams();
 
   return (
-    <div className="background-image flex flex-col items-center justify-center text-white transition-colors duration-500">
+    <div className="background-image flex flex-col items-center justify-center text-white transition-colors duration-500 bg-black">
 
-      <h1 className=" pt-4 text-4xl font-bold mb-4">{name ? `Sets from the serie ${name}` : "All Sets"}</h1>
+      <h1 className=" pt-5 text-4xl font-bold mb-4 text-white">{name ? `Sets from the serie ${name}` : "All Sets"}</h1>
       <CardList items={sets} type="set" />
 
     </div>

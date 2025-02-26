@@ -2,7 +2,9 @@ import React from 'react'
 
 function favourites() {
   return (
-    <div>favourites</div>
+    <main className='background-image'>
+      
+    </main>
   )
 }
 
