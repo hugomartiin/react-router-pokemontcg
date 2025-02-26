@@ -6,7 +6,9 @@ function footer() {
   return (
     <>
       <Outlet />
-      <Footer />
+      <footer className='bg-primary p-6'>
+        <h2 className="text-center text-4xl text-white font-medium">&#169; By Hugo and Aitor</h2>
+      </footer>
     </>
   )
 }

@@ -34,4 +34,6 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+
+  box-sizing: border-box;
 }
