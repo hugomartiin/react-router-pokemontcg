@@ -10,7 +10,7 @@ function Button( {routeLink, textButton}: ButtonProps) {
   return (
     <Link 
         to={`${routeLink}`} 
-        className=' hover:bg-white text-white hover:text-primary font-bold py-2 px-4 rounded-2xl border-2 w-[70%] mx-auto'
+        className=' hover:bg-white text-white hover:text-primary font-bold py-2 px-4 rounded-2xl border-2 w-[70%] mx-auto mb-112'
     >
 
     {textButton}

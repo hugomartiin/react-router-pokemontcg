@@ -14,7 +14,7 @@ function header() {
             <Link to={'/series'} className="">Series</Link>
             <Link to={'/sets'} className="">Sets</Link>
             <Link to={'/favourites'} className="">Favourites</Link>
-            <Link to={'/cards'} className="">Search</Link>
+            <Link to={'/filters'} className="">Search</Link>
           </div>
         </nav>
       </header>

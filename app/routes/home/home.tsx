@@ -1,6 +1,7 @@
 import CardHome from "~/components/CardHome";
 // import type { Route } from "../+types/home";
 import "./style.css";
+import type { Route } from "../+types/filters";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,9 +12,9 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <main className="homePage py-12 bg-black h-[100vh]">
-      <img src="img/logo.png" alt="logo" className="w-[20%] mx-auto" />
-      <div className="grid grid-cols-3 gap-12 p-12 mx-auto w-[80%] ">
+    <main className="homePage py-12 bg-black min-h-[100vh]">
+      <img src="img/logo.png" alt="logo" className="min-w-[400px] w-[20%] mx-auto" />
+      <div className="grid gird-cols-1 xl:grid-cols-3 gap-12 p-4 my-12 mx-auto w-[80%] ">
         <CardHome 
           title="WATCH ALL THE SERIES AND SETS" 
           description="Have a look at the series and sets, or be melancholic and see the old ones" 
@@ -33,7 +34,7 @@ export default function Home() {
         <CardHome 
           title="FILTER TO SEARCH FOR SPECIFIC POKEMONS" 
           description="Check if there are pokemon cards for what you are looking for." 
-          routeLink="cards" 
+          routeLink="filters" 
           textButton="SEE FILTERS" 
           imgLink="img\COLLECTIONS.png" 
         />

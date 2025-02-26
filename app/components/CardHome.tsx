@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import Button from './general/button';
+import Button from './general/Button';
 
 interface CardHomeProps {
     title: string;
@@ -16,8 +16,8 @@ function CardHome({title, description, routeLink, textButton, imgLink}: CardHome
         <img className="w-[100%] rounded-t-2xl" src={`${imgLink}`} alt="Title" />
         <div className="text-center text-white p-4 flex flex-col gap-4 justify-between h-full">
             <h4 className="text-2xl">{title} </h4>
-            <div>
-              <p className=""> {description}</p>
+            <div className='mb-4'>
+              <p className="mb-8">{description}</p>
               <Button routeLink={routeLink} textButton={textButton} />
             </div>
         </div>
