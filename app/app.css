@@ -35,3 +35,10 @@ body {
     color-scheme: dark;
   }
 }
+
+.background-image {
+  background-image: url('../public/img/hero.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

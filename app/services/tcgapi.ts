@@ -68,7 +68,7 @@ export async function getSetsBySeriesId(id: string): Promise<SetBrief[]> {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        return Array.isArray(data.sets) ? data.sets : []; 
+        return Array.isArray(data.sets) ? data.sets : [];
     } catch (error) {
         console.error("Error fetching sets by series ID:", error);
         return [];

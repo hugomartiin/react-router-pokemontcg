@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { getSets, getSetsBySeriesId } from "../services/tcgapi";
+import { getSets, getSetsBySeriesId, getSeriesById } from "../services/tcgapi";
 import CardList from "../components/CardList";
 
 import type { SerieBrief, SetBrief } from "../types/interfaces";
@@ -9,17 +9,21 @@ import Series from "./series";
 // **Loader function for React Router**
 
 export async function clientLoader({ params }: { params: { id?: string } }) {
-
   try {
-    const sets: SetBrief[] = params.id
-      ? (await getSetsBySeriesId(params.id)) ?? []
-      : (await getSets()) ?? [];
-    return { sets };
+    if (params.id) {
+      const seriesData = await getSeriesById(params.id);
+      const sets: SetBrief[] = await getSetsBySeriesId(params.id);
+      return { name: seriesData?.name ?? params.id, sets };
+    } else {
+      const sets: SetBrief[] = await getSets() ?? [];
+      return { name: null, sets };
+    }
   } catch (error) {
     console.error("Error fetching sets:", error);
-    return { sets: [] };
+    return { name: "Unknown", sets: [] };
   }
 }
+
 
 
 // HydrateFallback is rendered while the client loader is running
@@ -35,14 +39,13 @@ export function HydrateFallback() {
 }
 
 function Sets() {
-  const loaderData: { sets: SetBrief[] } = useLoaderData();
-  const { sets } = loaderData;
-  const {id} = useParams();
-  
-  return (
-    <div className="flex flex-col items-center justify-center text-white transition-colors duration-500">
+  const { name, sets } = useLoaderData() as { name: string; sets: SetBrief[] };
+  const { id } = useParams();
 
-      <h1 className="text-2xl font-bold mb-4">{id ? `Sets from the serie ${id}` : "All Sets"}</h1>
+  return (
+    <div className="background-image flex flex-col items-center justify-center text-white transition-colors duration-500">
+
+      <h1 className=" pt-4 text-4xl font-bold mb-4">{name ? `Sets from the serie ${name}` : "All Sets"}</h1>
       <CardList items={sets} type="set" />
 
     </div>
