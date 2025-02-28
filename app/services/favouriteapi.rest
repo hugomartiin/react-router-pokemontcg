@@ -1,0 +1,2 @@
+### Get all card
+GET http://localhost:5000/favorites HTTP/1.1

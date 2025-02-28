@@ -13,7 +13,7 @@ export async function clientLoader({ params }: { params: { id?: string } }) {
     if (params.id) {
       const seriesData = await getSeriesById(params.id);
       const sets: SetBrief[] = await getSetsBySeriesId(params.id);
-      return { name: seriesData?.name ?? params.id, sets };
+      return { name: (seriesData?.name ?? params.id).toLowerCase(), sets };
     } else {
       const sets: SetBrief[] = await getSets() ?? [];
       return { name: null, sets };
