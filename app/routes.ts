@@ -21,7 +21,7 @@ export default [
     layout("layouts/footer.tsx", [
         layout("layouts/header.tsx", [
             route("filters","routes/filters.tsx"),
-            route("favouites", "routes/favourites.tsx"),
+            route("favourites", "routes/favourites.tsx"),
             route("series", "routes/series.tsx"),
             route("sets/:id?", "routes/sets.tsx"),
         ])

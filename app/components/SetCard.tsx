@@ -7,10 +7,10 @@ interface CardProps {
 
 function Card({ data, type }: CardProps) {
     return (
-        <div className="bg-purple-300 rounded-2xl shadow-lg p-6 text-center w-64 border border-gray-200 h-50">
+        <div className="bg-secundary rounded-2xl shadow-lg p-6 text-center w-64 border border-gray-200 h-50">
             <div className="flex justify-center">
                 {data.logo ? (
-                    <img src={`${data.logo}.webp`} alt={data.name} className="w-24 h-24 object-contain" />
+                    <img src={`${data.logo}.webp`} alt={data.name} className="max-w-[100%] h-24 object-contain" />
                 ) : (
                     <div className="w-24 h-24 flex items-center justify-center bg-black text-white rounded-full text-xl font-bold">
                         {type === "set" ? "SET" : "SERIE"}

@@ -1,23 +1,36 @@
-import React from 'react'
-import PokemonCard from '~/components/PokemonCard'
-import { getAllPokemonCardsBySet } from '~/services/tcgapi'
+import { useLoaderData } from "react-router-dom";
+import PokemonCard from "~/components/PokemonCard";
+import { getAllPokemonCardsBySet } from "~/services/tcgapi";
+import type { Card } from "~/types/interfaces";
 
+// Loader function to fetch data before rendering
+export async function loader() {
+  try {
+    return await getAllPokemonCardsBySet("base1");
+  } catch (error) {
+    console.error("Error fetching Pokémon cards:", error);
+    return []; // Return empty array in case of error
+  }
+}
 
 function filters() {
-  const pokemonCardList = getAllPokemonCardsBySet("base1")
+  const pokemonCardList = useLoaderData().cards; // Get data from loader
 
+  console.log(pokemonCardList);
   return (
-    <main className='w-[90%] mx-auto my-12'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8'>
-          <PokemonCard />
-          <PokemonCard/>
-          <PokemonCard/>
-          <PokemonCard/>
-          <PokemonCard/>
-        </div>
-      {/* {pokemonCardList.map(card =)} */}
+    <main className="background-image bg-black">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 w-[80%] mx-auto py-12">
+        {pokemonCardList.length > 0 ? (
+          pokemonCardList.map((card:Card) => (
+            <PokemonCard key={card.id} url={`${card.image}/high.webp`} />
+          ))
+        ) : (
+          <p className="text-white text-center col-span-full">No Pokémon cards found.</p>
+        )}
+      </div>
     </main>
-  )
+  );
 }
+
 
 export default filters

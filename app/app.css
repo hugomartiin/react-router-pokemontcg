@@ -9,7 +9,7 @@
   --color-primary_hover: #240c50;
   --color-navbar: #dbcaf8;
   --color-navbar_gradiant: linear-gradient(180deg, rgba(160, 136, 202, 1) 0%, rgba(203, 184, 235, 1) 100%);
-  --color-secundary: #FFF5CC;
+  --color-secundary: #A0CBCB;
   --color-secundary_opacity_medium: #EAE2F8d3;
 
   --color-series_card: rgb(200, 178, 236);
@@ -37,8 +37,9 @@ body {
 }
 
 .background-image {
-  background-image: url('../img/hero.png');
+  background-image: url('../public/img/hero.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  color: #cff0f0;
 }
