@@ -6,8 +6,10 @@ interface CardProps {
 }
 
 function Card({ data, type }: CardProps) {
+    const bgColor = type === "set" ? "bg-terciary" : "bg-secundary";
+
     return (
-        <div className="bg-secundary rounded-2xl shadow-lg p-6 text-center w-64 border border-gray-200 h-50">
+        <div className={`${bgColor} rounded-2xl shadow-lg p-6 text-center w-64 border border-gray-200 h-50`}>
             <div className="flex justify-center">
                 {data.logo ? (
                     <img src={`${data.logo}.webp`} alt={data.name} className="max-w-[100%] h-24 object-contain" />
