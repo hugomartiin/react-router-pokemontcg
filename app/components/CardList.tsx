@@ -15,7 +15,7 @@ const CardList = ({ items = [], type }: CardListProps) => {
             ) : (
                 items.map((item) => (
                     <Link
-                        to={type === "series" ? `../sets/${item.id}` : `finder/${item.id}`}
+                        to={type === "series" ? `../sets/${item.id}` : `../../filters/${item.id}`}
                         key={item.id}
                         className="block transform transition duration-300 hover:scale-105"
                     >

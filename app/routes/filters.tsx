@@ -2,11 +2,15 @@ import { useLoaderData } from "react-router-dom";
 import PokemonCard from "~/components/PokemonCard";
 import { getAllPokemonCardsBySet } from "~/services/tcgapi";
 import type { Card } from "~/types/interfaces";
+import type { Route } from "../+types/root";
 
 // Loader function to fetch data before rendering
-export async function loader() {
+export async function loader({ params }: Route.LoaderArgs) {
+  
+
   try {
-    return await getAllPokemonCardsBySet("base1");
+    return await getAllPokemonCardsBySet(params.setId || "base1");
+
   } catch (error) {
     console.error("Error fetching Pokémon cards:", error);
     return []; // Return empty array in case of error

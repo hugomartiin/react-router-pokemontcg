@@ -19,7 +19,7 @@ function Favourite() {
   console.log(favourites);
 
   return (
-    <main className="background-image bg-black">
+    <main className="background-image bg-black h-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 w-[80%] mx-auto py-12">
         {favourites != null ? (
           favourites.map((card: Card) => (

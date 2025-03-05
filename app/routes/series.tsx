@@ -35,7 +35,7 @@ function Series() {
   return (
     <div className="background-image flex flex-col items-center justify-center text-white transition-colors duration-500 bg-black">
 
-      <h1 className="pt-5 text-4xl font-bold mb-4 text-gold">All Series</h1>
+      <h1 className="pt-5 text-4xl font-bold mb-4">All Series</h1>
 
       <CardList items={series} type="series" />
 
