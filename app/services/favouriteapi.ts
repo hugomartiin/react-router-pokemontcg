@@ -2,9 +2,9 @@ const API_URL = "http://localhost:5000";
 
 import type { Card } from "../types/interfaces";
 
-export async function getAllFavorites(): Promise<Card[] | null> {
+export async function getAllFavourites(): Promise<Card[] | null> {
     try {
-        const response = await fetch(`${API_URL}/favorites`);
+        const response = await fetch(`${API_URL}/favourites`);
         if (!response.ok) throw new Error("Error fetching favorites");
 
         return await response.json();
@@ -14,9 +14,9 @@ export async function getAllFavorites(): Promise<Card[] | null> {
     }
 }
 
-export async function postCardToFavorites(card: Card): Promise<Card> {
+export async function postCardToFavourites(card: Card): Promise<Card> {
     try {
-        const response = await fetch(`${API_URL}/favorites`, {
+        const response = await fetch(`${API_URL}/favourites`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(card),
@@ -31,9 +31,9 @@ export async function postCardToFavorites(card: Card): Promise<Card> {
     }
 }
 
-export async function deleteCardFromFavorites(idCard: string): Promise<void> {
+export async function deleteCardFromFavourites(idCard: string): Promise<void> {
     try {
-        const response = await fetch(`${API_URL}/favorites/${idCard}`, {
+        const response = await fetch(`${API_URL}/favourites/${idCard}`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
         });

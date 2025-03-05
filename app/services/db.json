@@ -1,5 +1,53 @@
 {
-    "favorites": [
+    "favourites": [
+        {
+            "id": "A1-278",
+            "category": "Pokemon",
+            "image": "https://assets.tcgdex.net/en/tcgp/A1/278",
+            "localId": "278",
+            "name": "Machamp ex",
+            "rarity": "None",
+            "set": {
+                "cardCount": {
+                    "official": 226,
+                    "total": 275
+                },
+                "id": "A1",
+                "logo": "https://assets.tcgdex.net/en/tcgp/A1/logo",
+                "name": "Genetic Apex",
+                "symbol": "https://assets.tcgdex.net/univ/tcgp/A1/symbol"
+            },
+            "variants": {
+                "firstEdition": false,
+                "holo": true,
+                "normal": true,
+                "reverse": true,
+                "wPromo": false
+            },
+            "hp": 180,
+            "types": [
+                "Fighting"
+            ],
+            "stage": "Stage2",
+            "suffix": "EX",
+            "attacks": [
+                {
+                    "cost": [
+                        "Fighting",
+                        "Fighting",
+                        "Fighting"
+                    ],
+                    "name": "Mega Punch",
+                    "damage": "120"
+                }
+            ],
+            "retreat": 3,
+            "legal": {
+                "standard": false,
+                "expanded": false
+            },
+            "updated": "2024-11-06T02:16:30+01:00"
+        },
         {
             "id": "A1-278",
             "category": "Pokemon",

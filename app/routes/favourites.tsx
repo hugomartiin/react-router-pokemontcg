@@ -1,19 +1,36 @@
-import PokemonCard from '~/components/PokemonCard'
-import { getAllFavorites } from '~/services/favouriteapi'
+import PokemonCard from '~/components/PokemonCard';
+import { getAllFavourites } from '~/services/favouriteapi';
+import { useLoaderData } from "react-router-dom";
+import type { Card } from "~/types/interfaces";
 
-function favourites() {
-  return (
-    <main className='w-[90%] mx-auto my-12'>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8'>
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-      </div>
-      {/* {pokemonCardList.map(card =)} */}
-    </main>
-  )
+export async function loader() {
+  try {
+    const data = await getAllFavourites();
+    return data;
+  } catch (error) {
+    console.error("Error fetching Pokémon cards:", error);
+    return { favourites: [] };
+  }
 }
 
-export default favourites
+function Favourite() {
+  const favourites = useLoaderData();
+
+  console.log(favourites);
+
+  return (
+    <main className="background-image bg-black">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 w-[80%] mx-auto py-12">
+        {favourites != null ? (
+          favourites.map((card: Card) => (
+            <PokemonCard key={card.id} url={`${card.image}/high.webp`} />
+          ))
+        ) : (
+          <p className="text-white text-center col-span-full">No Pokémon cards found.</p>
+        )}
+      </div>
+    </main>
+  );
+}
+
+export default Favourite;
