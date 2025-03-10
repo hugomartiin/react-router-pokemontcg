@@ -60,7 +60,6 @@ export interface SerieBrief {
 
 export interface Filters {
     set: string,
-    name: string,
     category: string,
     rarity: string,
     sortedBy: string
