@@ -29,7 +29,7 @@ export async function clientLoader({ params }: { params: { id?: string } }) {
 // HydrateFallback is rendered while the client loader is running
 export function HydrateFallback() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
+    <div className="flex flex-col items-center justify-center h-full bg-black text-white">
       <div className="flex justify-center items-center">
         <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
       </div>
@@ -43,7 +43,7 @@ function Sets() {
   const { id } = useParams();
 
   return (
-    <div className="background-image flex flex-col items-center justify-center text-white transition-colors duration-500 bg-black">
+    <div className="background-image flex flex-col items-center justify-start text-white transition-colors duration-500 bg-black min-h-[75vh]">
 
       <h1 className=" pt-5 text-4xl font-bold mb-4 text-white">{name ? `Sets from the serie ${name}` : "All Sets"}</h1>
       <CardList items={sets} type="set" />

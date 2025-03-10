@@ -57,3 +57,11 @@ export interface SerieBrief {
     name: string;
     logo?: string;
 }
+
+export interface Filters {
+    set: string,
+    name: string,
+    category: string,
+    rarity: string,
+    sortedBy: string
+}
