@@ -54,9 +54,11 @@ function filters() {
 
     fetchFilteredCards();
   }, [filters]);*/
+
   const handleDeleteFromFavourites = (id: string) => {
 
   };
+
   return (
     <main className="background-image bg-black min-h-[75vh]">
       <FilterBar searchedPokemonName={searchedPokemonName} handleChange={handleChange} />
@@ -69,6 +71,9 @@ function filters() {
         ) : (
           <p className="text-white text-center col-span-full">No Pokémon cards found.</p>
         )}
+
+        
+
       </div>
     </main>
   );

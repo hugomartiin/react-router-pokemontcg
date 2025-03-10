@@ -13,7 +13,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <main className="homePage py-12 bg-black min-h-[100vh]">
-      <img src="img/logo.png" alt="logo" className="min-w-[400px] w-[20%] mx-auto" />
+      <img src="img/logo.png" alt="logo" className="h-[20vh] mx-auto" />
       <div className="grid gird-cols-1 xl:grid-cols-3 gap-12 my-12 mx-auto w-[70%] ">
         <CardHome 
           title="WATCH ALL THE SERIES AND SETS" 
