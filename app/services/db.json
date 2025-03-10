@@ -1,3 +1,10 @@
 {
-  "favourites": []
+  "favourites": [
+    {
+      "id": "base1-3",
+      "image": "https://assets.tcgdex.net/en/base/base1/3",
+      "localId": "3",
+      "name": "Chansey"
+    }
+  ]
 }

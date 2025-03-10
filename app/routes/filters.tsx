@@ -12,19 +12,21 @@ const initialFilters: Filters = {
   rarity: "",
   sortedBy: ""
 }
+
 // Loader function to fetch data before rendering
 export async function loader({ params }: Route.LoaderArgs) {
 
   try {
-    const set = params.setId || "base2";
+    const set = params.setId || "base1";
 
-    return await getFilteredCards(set);
+    return await getAllPokemonCardsBySet(set);
 
   } catch (error) {
     console.error("Error fetching Pokémon cards:", error);
     return []; // Return empty array in case of error
   }
 }
+
 function filters() {
   // const pokemonCardList = useLoaderData().cards; // Get data from loader
   //Use with useFilteredCards in loader
@@ -50,7 +52,6 @@ function filters() {
       setPokemonCardList(filteredCards || []);
     };
 
- 
     fetchFilteredCards();
   }, [filters]);*/
   const handleDeleteFromFavourites = (id: string) => {
@@ -74,4 +75,4 @@ function filters() {
 }
 
 
-export default filters;
+export default filters
