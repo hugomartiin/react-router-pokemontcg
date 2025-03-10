@@ -57,3 +57,8 @@ export interface SerieBrief {
     name: string;
     logo?: string;
 }
+export interface ToastNotificationProps {
+    isVisible: boolean;
+    cardName: string;
+    imageUrl: string;
+}
