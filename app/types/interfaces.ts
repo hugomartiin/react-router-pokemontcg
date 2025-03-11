@@ -59,8 +59,23 @@ export interface SerieBrief {
 }
 
 export interface Filters {
+    series: string,
     set: string,
     category: string,
     rarity: string,
     sortedBy: string
 }
+
+export interface FilterBarProps {
+  searchedPokemonName: string;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  setFilters: (filters: Filters) => void;
+  filters: Filters;
+  raritiesList: string[];
+}
+
+export interface SeriesFilterProps {
+    setFilters: (filters: Filters) => void;
+    filters: Filters;
+}
+
