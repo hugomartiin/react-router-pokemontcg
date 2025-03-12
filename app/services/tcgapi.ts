@@ -10,7 +10,7 @@ export async function getAllPokemonCardsBySet(set: string): Promise<Card[] | nul
     try {
         const response = await fetch(`${API_URL}/sets/${set}`);
         const data = await response.json();
-        return data;
+        return data.cards;
     } catch (error) {
         console.error("Error:", error);
         return null;
@@ -88,6 +88,8 @@ export async function getFilteredCards(
         const endPoint = `${API_URL}/cards?id=like:${set}-&name=like:${name}&category=like:${category}&rarity=like:${rarity}&sort:field=${sortedBy}&sort:order=ASC`;
         const response = await fetch(endPoint);
         const data = await response.json();
+        console.log(data);
+        
         return data;
     } catch (error) {
         console.error("Error:", error);

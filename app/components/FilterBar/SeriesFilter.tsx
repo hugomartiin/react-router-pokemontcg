@@ -39,11 +39,11 @@ function SeriesFilter({ setFilters, filters }: SeriesFilterProps) {
 
     return (
       <div className='flex flex-col gap-2 relative'>
-        <h1 className='text-white text-center text-5xl font-bold mb-4'>Series</h1>
+        <h1 className='text-white text-center text-5xl font-bold mb-4'>Serie:</h1>
         
         {/*Selected serie*/}
         <div 
-         className='selectedSeries border-2 border-gold rounded-md p-3'
+         className='selectedSeries border-2 border-gold rounded-md p-3 h-[150px] flex flex-col items-center justify-center'
           onClick={toggleList}
         >
           {selectedSerie ? (

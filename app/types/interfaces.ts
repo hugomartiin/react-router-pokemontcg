@@ -63,7 +63,7 @@ export interface Filters {
     set: string,
     category: string,
     rarity: string,
-    sortedBy: string
+    orderBy: string
 }
 
 export interface FilterBarProps {

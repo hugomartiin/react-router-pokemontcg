@@ -39,11 +39,11 @@ function SetsFilter({ setFilters, filters }: { setFilters: (filters: Filters) =>
 
     return (
       <div className='flex flex-col gap-2 relative'>
-        <h1 className='text-white text-center text-5xl font-bold mb-4'>Sets</h1>
+        <h1 className='text-white text-center text-5xl font-bold mb-4'>Set:</h1>
         
         {/*Selected Set*/}
         <div 
-         className='selectedSets border-2 border-gold rounded-md p-3'
+         className='selectedSets border-2 border-gold rounded-md p-3 h-[150px] flex flex-col items-center justify-center'
           onClick={toggleList}
         >
           {selectedSet ? (
