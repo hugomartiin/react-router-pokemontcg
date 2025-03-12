@@ -75,8 +75,6 @@ export async function getSetsBySeriesId(id: string): Promise<SetBrief[]> {
     }
 }
 
-
-
 export async function getFilteredCards(
     set: string = "base1",
     name: string = "",
@@ -89,7 +87,7 @@ export async function getFilteredCards(
         const response = await fetch(endPoint);
         const data = await response.json();
         console.log(data);
-        
+
         return data;
     } catch (error) {
         console.error("Error:", error);
