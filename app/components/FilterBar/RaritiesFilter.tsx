@@ -16,7 +16,7 @@ function RaritiesFilter({ setFilters, filters, raritiesList }: { setFilters: (fi
     }
 
     return (
-      <div className='flex flex-col gap-2 w-[25%] relative'>
+      <div className='flex flex-col gap-2 relative'>
         <h1 className='text-white text-center text-5xl font-bold mb-4'>Rarities</h1>
         
         {/*Selected Rarity*/}

@@ -9,19 +9,19 @@ function SetsFilter({ setFilters, filters }: { setFilters: (filters: Filters) =>
     const [showSets, setShowSets] = useState(false);
 
     useEffect(() => {
-        const loadSets = async () => {
-            try {
-                const SetsData = await getSetsBySeriesId(filters.series);
-                setSets(SetsData || []);
-            } catch (error) {
-                console.error('Error loading Sets:', error);
-            } finally {
-                setIsLoading(false);
-            }
-        };
+      const loadSets = async () => {
+          try {
+              const SetsData = await getSetsBySeriesId(filters.series);
+              setSets(SetsData || []);
+          } catch (error) {
+              console.error('Error loading Sets:', error);
+          } finally {
+              setIsLoading(false);
+          }
+      };
 
-        loadSets();
-    }, []);
+      loadSets();
+    }, [filters.series]);
 
     useEffect(() => {
         if (selectedSet) {
@@ -38,7 +38,7 @@ function SetsFilter({ setFilters, filters }: { setFilters: (filters: Filters) =>
     }
 
     return (
-      <div className='flex flex-col gap-2 w-[25%] relative'>
+      <div className='flex flex-col gap-2 relative'>
         <h1 className='text-white text-center text-5xl font-bold mb-4'>Sets</h1>
         
         {/*Selected Set*/}

@@ -5,7 +5,6 @@ import type { Card, Filters } from "~/types/interfaces";
 import type { Route } from "../+types/root";
 import { useEffect, useMemo, useState } from "react";
 import FilterBar from "~/components/FilterBar/FilterBar";
-import { getAllFavourites } from "~/services/favouriteapi";
 
 const initialFilters: Filters = {
   series: "",
@@ -19,7 +18,7 @@ export async function loader({ params }: Route.LoaderArgs) {
   try {
     initialFilters.set = params.setId || "base1";
 
-    return await getAllFavourites();
+    return await getAllPokemonCardsBySet(initialFilters.set);
 
   } catch (error) {
     console.error("Error fetching Pokémon cards:", error);
@@ -28,7 +27,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 }
 
 function filters() {
-  const [pokemonCardList, setPokemonCardList] = useState<Card[]>(useLoaderData() || []);
+  const [pokemonCardList, setPokemonCardList] = useState<Card[]>(useLoaderData().cards || []);
 
   const [currentFilters, setCurrentFilters] = useState<Filters>(initialFilters);
   
@@ -41,15 +40,14 @@ useEffect(() => {
     setRaritiesList(uniqueRarities as string[]);
   }, [pokemonCardList]);
 
-  useEffect(() => {
-    const fetchCards = async () => {
-      const cards = await getAllPokemonCardsBySet(currentFilters.set);
-      console.log(cards);
-      
-      /*setPokemonCardList(cards || []);*/
-    };
-    fetchCards();
-  }, [currentFilters.set]);
+useEffect(() => {
+  const fetchCards = async () => {
+    const cards = await getAllPokemonCardsBySet(currentFilters.set);
+    
+    /*setPokemonCardList(cards || []);*/
+  };
+  fetchCards();
+}, [currentFilters.set]);
 
   const handleDeleteFromFavourites = (id: string) => {
 
@@ -61,9 +59,9 @@ useEffect(() => {
   };
 
   const filteredPokemons = useMemo(() => {
-    return pokemonCardList.filter((pokemon: Card) =>
+    
+    return pokemonCardList?.filter((pokemon: Card) =>
       pokemon.name.toLowerCase().startsWith(searchedPokemonName.toLowerCase()) &&
-      pokemon.set.id.includes("") &&
       pokemon.rarity?.includes(currentFilters.rarity)
     );
   }, [searchedPokemonName, pokemonCardList, currentFilters]);
@@ -79,8 +77,7 @@ useEffect(() => {
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 w-[80%] mx-auto py-12">
-        
-        {filteredPokemons.length > 0 ? (
+        { filteredPokemons.length > 0 ? (
           filteredPokemons.map((card: Card) => (
             <PokemonCard key={card.id} card={card} canAddToFavourites={true} onDeleteFromFavourites={handleDeleteFromFavourites} />
           ))
