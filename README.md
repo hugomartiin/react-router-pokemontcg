@@ -28,7 +28,7 @@ We use a JSON server to save the favorites data in the `db.json` file.
 
 ### Figma
 
-[![View on Figma](https://img.shields.io/badge/Figma-Design-orange)](https://www.figma.com/file/U9Uw8hBSiImSOBgG1noTG3?node-id=0-1&node-type=canvas&t=3iHbTJjqZlu3LWl0-0&type=design&mode=design&fuid=1418561696904566261)
+[![View on Figma](https://img.shields.io/badge/Figma-Design-orange)](https://www.figma.com/design/zqSzAt5EVJxvH1gU6si9IB/AjaxProject?node-id=1-2&t=WArFvtkSXX6Z905t-0)
 
 
 ### Repository
@@ -212,5 +212,3 @@ The application is structured into different reusable components:
 - **Footer.tsx** – Displays the footer.
 - **PokemonCard.tsx** – Component for rendering individual Pokémon card.
 - **SetCard.tsx** – Display the set or serie cards.
-- **ToastNotification.tsx** – Handles notifications for user actions of favourites section.
-
