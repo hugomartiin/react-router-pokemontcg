@@ -6,8 +6,6 @@ import type { SerieBrief, SetBrief } from "../types/interfaces";
 import { useLoaderData, useParams } from "react-router";
 import Series from "./series";
 
-// **Loader function for React Router**
-
 export async function clientLoader({ params }: { params: { id?: string } }) {
   try {
     if (params.id) {
@@ -23,7 +21,6 @@ export async function clientLoader({ params }: { params: { id?: string } }) {
     return { name: "Unknown", sets: [] };
   }
 }
-
 
 
 // HydrateFallback is rendered while the client loader is running

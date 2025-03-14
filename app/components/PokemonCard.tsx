@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import type { Card } from '~/types/interfaces';
 import { postCardToFavourites, deleteCardFromFavourites } from '~/services/favouriteapi';
 import { Bounce, toast, ToastContainer } from 'react-toastify';
+import ToastNotification  from './ToastNotification';
 
 interface PokemonCardProps {
   card: Card;
-  canAddToFavourites: boolean; // Prop that controls if it can be added to favorites
-  onDeleteFromFavourites: (id: string) => void; // Prop to handle deletion from the parent
+  canAddToFavourites: boolean; 
+  onDeleteFromFavourites: (id: string) => void; 
 }
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ card, canAddToFavourites, onDeleteFromFavourites }) => {
@@ -28,15 +29,16 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ card, canAddToFavourites, onD
         
       } else {
         if (isFavourite) {
-          await deleteCardFromFavourites(card.id); // Remove from favorites
+          await deleteCardFromFavourites(card.id);
           console.log('Card removed from favorites');
           setIsFavourite(false);
-          notify();
+          ToastNotification();
         } else {
-          await postCardToFavourites(card); // Add to favorites
+          await postCardToFavourites(card); 
           console.log('Card added to favorites');
           setIsFavourite(true);
           notify();
+          ToastNotification();
         }
       }
     } catch (error) {

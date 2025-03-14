@@ -5,7 +5,6 @@ import CardList from "../components/CardList";
 import type { SerieBrief } from "../types/interfaces";
 import { useLoaderData } from "react-router";
 
-// **Loader function for React Router**
 export async function clientLoader() {
   try {
     const series: SerieBrief[] = (await getSeries()) ?? [];
@@ -16,7 +15,6 @@ export async function clientLoader() {
   }
 }
 
-// HydrateFallback is rendered while the client loader is running
 export function HydrateFallback() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-black text-white">

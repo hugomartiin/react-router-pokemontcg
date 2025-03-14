@@ -40,7 +40,7 @@ function filters() {
     };
     
     fetchCards();
-  }, [currentFilters.set]); // Only re-fetch when the set changes
+  }, [currentFilters.set]); 
 
   const handleFilterChange = async (newFilters: Filters) => {
     setCurrentFilters(newFilters);
@@ -87,6 +87,7 @@ function filters() {
         )}
       </div>
     </main>
+    
   );
 }
 

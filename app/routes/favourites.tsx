@@ -29,8 +29,8 @@ function Favourite() {
             <PokemonCard
               key={card.id}
               card={card}
-              canAddToFavourites={false} // Solo eliminación en la página de favoritos
-              onDeleteFromFavourites={handleDeleteFromFavourites} // Pasamos la función para actualizar el estado
+              canAddToFavourites={false} 
+              onDeleteFromFavourites={handleDeleteFromFavourites}
             />
           ))
         ) : (
