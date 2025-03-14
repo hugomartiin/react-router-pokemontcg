@@ -13,7 +13,19 @@ interface PokemonCardProps {
 const PokemonCard: React.FC<PokemonCardProps> = ({ card, canAddToFavourites, onDeleteFromFavourites }) => {
   const [isFavourite, setIsFavourite] = useState(false);
   
-  const notify = () => toast("Wow so easy!");
+  const notifyAddedToFavourites = () => toast(
+    <div className='text-center'>
+      <img src={`${card.image}/high.webp`} alt={card.name} className="w-24 mx-auto " />
+      <p className='mt-3'>Card {card.name} has been added to favorites.</p>
+    </div>
+  );
+
+  const notifyRemovedFromFavourites = () => toast(
+    <div className='text-center'>
+      <img src={`${card.image}/high.webp`} alt={card.name} className="w-24 mx-auto " />
+      <p className='mt-3'>Card {card.name} has been removed from favorites.</p>
+    </div>
+  );
 
   useEffect(() => {
     setIsFavourite(false);
@@ -26,19 +38,17 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ card, canAddToFavourites, onD
         console.log('Card removed from favorites');
         onDeleteFromFavourites(card.id); 
         setIsFavourite(false); 
-        
       } else {
         if (isFavourite) {
           await deleteCardFromFavourites(card.id);
           console.log('Card removed from favorites');
           setIsFavourite(false);
-          ToastNotification();
+          notifyRemovedFromFavourites();
         } else {
           await postCardToFavourites(card); 
           console.log('Card added to favorites');
           setIsFavourite(true);
-          notify();
-          ToastNotification();
+          notifyAddedToFavourites();
         }
       }
     } catch (error) {

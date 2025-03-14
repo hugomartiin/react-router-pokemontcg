@@ -60,83 +60,64 @@
       "updated": "2024-12-01T23:26:53+01:00"
     },
     {
-      "id": "A1-277",
-      "category": "Pokemon",
-      "image": "https://assets.tcgdex.net/en/tcgp/A1/277",
-      "localId": "277",
-      "name": "Gengar ex",
-      "rarity": "None",
-      "set": {
-        "cardCount": {
-          "official": 226,
-          "total": 275
-        },
-        "id": "A1",
-        "logo": "https://assets.tcgdex.net/en/tcgp/A1/logo",
-        "name": "Genetic Apex",
-        "symbol": "https://assets.tcgdex.net/univ/tcgp/A1/symbol"
-      },
-      "variants": {
-        "firstEdition": false,
-        "holo": true,
-        "normal": true,
-        "reverse": true,
-        "wPromo": false
-      },
-      "hp": 170,
-      "types": [
-        "Psychic"
-      ],
-      "stage": "Stage2",
-      "suffix": "EX",
-      "abilities": [
-        {
-          "type": "Ability",
-          "name": "Shadowy Spellbind",
-          "effect": "As long as this Pokémon is in the Active Spot, your opponent can't use any Supporter cards from their hand."
-        }
-      ],
-      "attacks": [
-        {
-          "cost": [
-            "Psychic",
-            "Psychic",
-            "Psychic"
-          ],
-          "name": "Spooky Shot",
-          "damage": "100"
-        }
-      ],
-      "retreat": 2,
-      "legal": {
-        "standard": false,
-        "expanded": false
-      },
-      "updated": "2024-11-06T02:16:30+01:00"
-    },
-    {
-      "id": "bw6-2",
-      "image": "https://assets.tcgdex.net/en/bw/bw6/2",
-      "localId": "2",
-      "name": "Skiploom"
-    },
-    {
-      "id": "ex4-2",
-      "image": "https://assets.tcgdex.net/en/ex/ex4/2",
-      "localId": "2",
-      "name": "Team Aqua's Crawdaunt"
+      "id": "base1-4",
+      "image": "https://assets.tcgdex.net/en/base/base1/4",
+      "localId": "4",
+      "name": "Charizard"
     },
     {
       "id": "base1-1",
+      "image": "https://assets.tcgdex.net/en/base/base1/1",
       "localId": "1",
-      "name": "Alakazam",
-      "image": "https://assets.tcgdex.net/en/base/base1/1"
+      "name": "Alakazam"
     },
     {
       "id": "base1-4",
       "image": "https://assets.tcgdex.net/en/base/base1/4",
       "localId": "4",
       "name": "Charizard"
+    },
+    {
+      "id": "base1-8",
+      "image": "https://assets.tcgdex.net/en/base/base1/8",
+      "localId": "8",
+      "name": "Machamp"
+    },
+    {
+      "id": "base1-7",
+      "image": "https://assets.tcgdex.net/en/base/base1/7",
+      "localId": "7",
+      "name": "Hitmonchan"
+    },
+    {
+      "id": "base1-5",
+      "image": "https://assets.tcgdex.net/en/base/base1/5",
+      "localId": "5",
+      "name": "Clefairy"
+    },
+    {
+      "id": "base1-1",
+      "image": "https://assets.tcgdex.net/en/base/base1/1",
+      "localId": "1",
+      "name": "Alakazam"
+    },
+    {
+      "id": "base1-2",
+      "image": "https://assets.tcgdex.net/en/base/base1/2",
+      "localId": "2",
+      "name": "Blastoise"
+    },
+    {
+      "id": "base1-3",
+      "image": "https://assets.tcgdex.net/en/base/base1/3",
+      "localId": "3",
+      "name": "Chansey"
+    },
+    {
+      "id": "base1-8",
+      "image": "https://assets.tcgdex.net/en/base/base1/8",
+      "localId": "8",
+      "name": "Machamp"
     }
   ],
   "other_collections": [
