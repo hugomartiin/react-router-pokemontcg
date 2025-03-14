@@ -77,17 +77,12 @@ export async function getSetsBySeriesId(id: string): Promise<SetBrief[]> {
 
 export async function getFilteredCards(
     set: string = "base1",
-    name: string = "",
-    category: string = "",
-    rarity: string = "",
     sortedBy: string = ""
 ): Promise<Card[] | null> {
     try {
-        const endPoint = `${API_URL}/cards?id=like:${set}-&name=like:${name}&category=like:${category}&rarity=like:${rarity}&sort:field=${sortedBy}&sort:order=ASC`;
+        const endPoint = `${API_URL}/cards?id=like:${set}-&sort:field=${sortedBy}&sort:order=ASC`;
         const response = await fetch(endPoint);
         const data = await response.json();
-        console.log(data);
-
         return data;
     } catch (error) {
         console.error("Error:", error);

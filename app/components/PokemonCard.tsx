@@ -21,14 +21,12 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ card, canAddToFavourites, onD
   const handleFavouriteClick = async () => {
     try {
       if (!canAddToFavourites) {
-        // If we are on the favorites page, we remove the card
         await deleteCardFromFavourites(card.id);
         console.log('Card removed from favorites');
-        onDeleteFromFavourites(card.id); // Directly remove the card from the parent's state
-        setIsFavourite(false); // Update the state
+        onDeleteFromFavourites(card.id); 
+        setIsFavourite(false); 
         
       } else {
-        // If we are on a page where it can be added, add or remove from favorites
         if (isFavourite) {
           await deleteCardFromFavourites(card.id); // Remove from favorites
           console.log('Card removed from favorites');
@@ -58,8 +56,6 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ card, canAddToFavourites, onD
           )}
         </a>
       </div>
-      <ToastContainer
-      />
     </div>
   );
 };

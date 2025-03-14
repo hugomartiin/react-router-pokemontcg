@@ -19,12 +19,9 @@ const initialFilters: Filters = {
 export async function loader({ params }: Route.LoaderArgs) {
   try {
     initialFilters.set = params.setId || "base1";
+
     return await getFilteredCards(
-      initialFilters.set,
-      "",
-      "",
-      "",
-      ""
+      initialFilters.set
     );
 
   } catch (error) {
@@ -47,9 +44,6 @@ function filters() {
   useEffect(() => {
     const fetchCards = async () => {
       const cards = await getAllPokemonCardsBySet(currentFilters.set || "base1");
-      console.log(cards);
-      console.log(currentFilters);
-      
       
       const uniqueRarities = [...new Set(pokemonCardList.map(card => card.rarity))];
       setRaritiesList(uniqueRarities as string[]);
@@ -60,17 +54,16 @@ function filters() {
   }, [currentFilters.set]);
 
   useEffect(() => {
+    
     const fetchCards = async () => {
       const cards = await getFilteredCards(
         currentFilters.set || "base1",
-        currentFilters.category || "",
-        currentFilters.rarity || "",
-        currentFilters.orderBy || ""
+        currentFilters.orderBy == "None" ? "" : currentFilters.orderBy
       );
-      console.log(cards);
-      console.log(currentFilters);
+      setPokemonCardList(cards || []);
     };
     fetchCards();
+    
   }, [currentFilters.orderBy]);
 
   const handleDeleteFromFavourites = (id: string) => {

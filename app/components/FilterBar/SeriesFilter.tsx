@@ -39,17 +39,17 @@ function SeriesFilter({ setFilters, filters }: SeriesFilterProps) {
 
     return (
       <div className='flex flex-col gap-2 relative'>
-        <h1 className='text-white text-center text-5xl font-bold mb-4'>Serie:</h1>
+        <h1 className='text-white text-center text-4xl font-bold mb-4'>Serie:</h1>
         
         {/*Selected serie*/}
         <div 
-         className='selectedSeries border-2 border-gold rounded-md p-3 h-[150px] flex flex-col items-center justify-center'
+         className='selectedSeries border-2 border-gold rounded-md p-3 h-[150px] flex flex-col items-center hover:cursor-pointer justify-center max-h-[100%]'
           onClick={toggleList}
         >
           {selectedSerie ? (
             <>
               {selectedSerie.logo ? (
-                <img src={selectedSerie.logo + ".webp"} alt={selectedSerie?.name} className='text-center max-h-[100px] mx-auto mb-4' />
+                <img src={selectedSerie.logo + ".webp"} alt={selectedSerie?.name} className='text-center max-h-[50%] mx-auto mb-4 ' />
               ) : (
                 <div className='w-[100px] h-[100px] bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-4'>
                   <p className='text-center text-white'>{selectedSerie.name.slice(0, 2).toUpperCase() + " logo"}</p>
@@ -64,18 +64,18 @@ function SeriesFilter({ setFilters, filters }: SeriesFilterProps) {
         </div>
 
         {/*Series list*/}
-        <ul className={`flex flex-col ${showSeries ? 'block' : 'hidden'} bg-secundary rounded-md h-[400px] overflow-y-auto absolute top-full left-0 w-full`}>
+        <ul className={`flex flex-col ${showSeries ? 'block' : 'hidden'} bg-secundary rounded-md z-1000 h-[700px] overflow-y-auto absolute top-full left-0 w-full`}>
           {series.map((serie, index) => (
             <li
-            className={`bg-black w-[100%] py-6 px-4 ${index % 2 === 0 ? "bg-black" : "bg-gray-800"}`}
+            className={`bg-black w-[100%] py-6 px-4 ${index % 2 === 0 ? "bg-black" : "bg-gray-800"} hover:cursor-pointer hover:bg-gray-500 transition-colors duration-300`}
             key={index}
             onClick={() => {setSelectedSerie(serie); toggleList()}}
             >
               {serie.logo ? (
-                <img src={serie.logo + ".webp"} alt={serie.name} className='text-center max-h-[100px] mx-auto mb-4' />
+                <img src={serie.logo + ".webp"} alt={serie.name} className='text-center max-h-[50%] mx-auto mb-4' />
               ) : (
-                <div className='w-[100px] h-[100px] bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-4'>
-                  <p className='text-center text-white'>{serie.name.slice(0, 2).toUpperCase() + " logo"}</p>
+                <div className='w-[100px] h-[100px] bg-primary rounded-full flex items-center justify-center mx-auto mb-4'>
+                  <p className='text-center text-white'>{serie.name.slice(0, 3).toUpperCase() + " logo"}</p>
                 </div>
               )}
               <p className='text-center text-white'>{serie.name}</p>

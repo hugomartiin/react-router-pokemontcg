@@ -73,3 +73,6 @@ GET https://api.tcgdex.net/v2/en/cards?category=like:&id=like:pl1&sort:field=ill
 
 ###
 GET https://api.tcgdex.net/v2/en/cards?id=like:base1&name=like:&category=like:&rarity=like:Rare&sort:field=
+
+###
+GET https://api.tcgdex.net/v2/en/cards?id=like:sm3-&name=like:&category=like:&rarity=like:illustrator&sort:field=&sort:order=ASC
