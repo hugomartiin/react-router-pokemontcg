@@ -35,6 +35,10 @@ We use a JSON server to save the favorites data in the `db.json` file.
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://www.figma.com/design/zqSzAt5EVJxvH1gU6si9IB/AjaxProject?node-id=1-2&t=KPvYhecE4wfUOneZ-0)
 
+### Deploy page
+
+[![View on Vercel](https://img.shields.io/badge/Vercel-%23121011.svg?logo=vercel&logoColor=black)](https://react-router-pokemontcg.vercel.app/)
+
 ## API Integration
 
 ### API Name: TCG dex.
@@ -195,7 +199,7 @@ npm run dev
  - In the filter page by point to one card you can add it to your favourites by click the star.
  - In the favourite page you can delete one card by clicking on the trash logo.
 
- ## Implementation Notes
+## Implementation Notes
 
 The application is structured into different reusable components:
 

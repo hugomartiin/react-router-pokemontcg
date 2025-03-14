@@ -4,13 +4,16 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-  --color-primary: #042121;
+  --color-primary: #0A0421;
   --color-primary-navbar_gradiant: linear-gradient(180deg, rgb(81, 44, 150) 0%, #a088ca 100%);
   --color-primary_hover: #240c50;
   --color-navbar: #dbcaf8;
   --color-navbar_gradiant: linear-gradient(180deg, rgba(160, 136, 202, 1) 0%, rgba(203, 184, 235, 1) 100%);
-  --color-secundary: #A0CBCB;
+  --color-secundary: #4C4166;
   --color-terciary: #e0c3da;
+  --color-terciary_hover: #A892A4;
+  --color-quaternary: #c0e9ea;
+  --color-quaternary_hover: #92B2B3;
   --color-secundary_opacity_medium: #EAE2F8d3;
 
   --color-series_card: rgb(200, 178, 236);

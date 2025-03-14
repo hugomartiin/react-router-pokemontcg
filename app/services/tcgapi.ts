@@ -80,7 +80,9 @@ export async function getFilteredCards(
     sortedBy: string = ""
 ): Promise<Card[] | null> {
     try {
-        const endPoint = `${API_URL}/cards?id=like:${set}-&sort:field=${sortedBy}&sort:order=ASC`;
+        
+        const endPoint = `${API_URL}/cards?id=like:${set}-&category=like:pokemon&sort:field=${sortedBy}&sort:order=ASC`;
+        console.log(endPoint);
         const response = await fetch(endPoint);
         const data = await response.json();
         return data;

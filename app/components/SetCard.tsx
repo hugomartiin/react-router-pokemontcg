@@ -6,7 +6,7 @@ interface CardProps {
 }
 
 function Card({ data, type }: CardProps) {
-    const bgColor = type === "set" ? "bg-terciary" : "bg-secundary";
+    const bgColor = type === "set" ? "bg-terciary hover:bg-terciary_hover" : "bg-quaternary hover:bg-quaternary_hover";
 
     return (
         <div className={`${bgColor} rounded-2xl shadow-lg p-6 text-center w-64 border border-gray-200 h-50`}>

@@ -71,7 +71,6 @@ export interface FilterBarProps {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   setFilters: (filters: Filters) => void;
   filters: Filters;
-  raritiesList: string[];
 }
 
 export interface SeriesFilterProps {

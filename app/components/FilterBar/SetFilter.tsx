@@ -39,27 +39,27 @@ function SetsFilter({ setFilters, filters }: { setFilters: (filters: Filters) =>
 
     return (
       <div className='flex flex-col gap-2 relative'>
-        <h1 className='text-white text-center text-4xl font-bold mb-4'>Set:</h1>
+        <h1 className='text-gold text-center text-4xl font-bold mb-4'>Set:</h1>
         
         {/*Selected Set*/}
         <div 
-         className='selectedSets border-2 border-gold rounded-md p-3 h-[150px] flex flex-col items-center hover:cursor-pointer justify-center'
+         className='selectedSets border-2 border-gold rounded-md p-3 h-[150px] flex flex-col items-center hover:cursor-pointer justify-center bg-secundary'
           onClick={toggleList}
         >
           {selectedSet ? (
             <>
               {selectedSet.logo ? (
-                <img src={selectedSet.logo + ".webp"} alt={selectedSet?.name} className='text-center h-[50%] mx-auto mb-4' />
+                <img src={selectedSet.logo + ".webp"} alt={selectedSet?.name} className='text-center max-h-[100px] mx-auto mb-4' />
               ) : (
-                <div className='w-[100px] h-[100px] bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-4'>
+                <div className='w-[100px] h-[100px] rounded-full flex items-center justify-center mx-auto mb-4'>
                   <p className='text-center text-white'>{selectedSet.name.slice(0, 2).toUpperCase() + " logo"}</p>
                 </div>
               )}
               
-              <p className='text-center'>{selectedSet?.name}</p>
+              <p className='text-center text-xl'>{selectedSet?.name}</p>
             </>
           ) : (
-            <p className='text-center text-white'>Select a Set</p>
+            <p className='text-center text-white text-xl'>Select a Set</p>
           )}
         </div>
 
@@ -72,13 +72,13 @@ function SetsFilter({ setFilters, filters }: { setFilters: (filters: Filters) =>
             onClick={() => {setSelectedSet(Set); toggleList()}}
             >
               {Set.logo ? (
-                <img src={Set.logo + ".webp"} alt={Set.name} className='text-center max-h-[50%] mx-auto mb-4' />
+                <img src={Set.logo + ".webp"} alt={Set.name} className='text-center max-h-[150px] mx-auto mb-4' />
               ) : (
                 <div className='w-[100px] h-[100px] bg-gold rounded-full flex items-center justify-center mx-auto mb-4'>
                   <p className='text-center text-white'>{Set.name.slice(0, 3).toUpperCase() + " logo"}</p>
                 </div>
               )}
-              <p className='text-center text-white'>{Set.name}</p>
+              <p className='text-center text-white text-xl'>{Set.name}</p>
             </li>
           ))}
         </ul>

@@ -39,27 +39,27 @@ function SeriesFilter({ setFilters, filters }: SeriesFilterProps) {
 
     return (
       <div className='flex flex-col gap-2 relative'>
-        <h1 className='text-white text-center text-4xl font-bold mb-4'>Serie:</h1>
+        <h1 className='text-gold text-center text-4xl font-bold mb-4'>Serie:</h1>
         
         {/*Selected serie*/}
         <div 
-         className='selectedSeries border-2 border-gold rounded-md p-3 h-[150px] flex flex-col items-center hover:cursor-pointer justify-center max-h-[100%]'
+         className='selectedSeries border-2 border-gold rounded-md p-3 h-[150px] flex flex-col items-center hover:cursor-pointer justify-center max-h-[100%] bg-secundary'
           onClick={toggleList}
         >
           {selectedSerie ? (
             <>
               {selectedSerie.logo ? (
-                <img src={selectedSerie.logo + ".webp"} alt={selectedSerie?.name} className='text-center max-h-[50%] mx-auto mb-4 ' />
+                <img src={selectedSerie.logo + ".webp"} alt={selectedSerie?.name} className='text-center max-h-[100px] mx-auto mb-4 ' />
               ) : (
                 <div className='w-[100px] h-[100px] bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-4'>
                   <p className='text-center text-white'>{selectedSerie.name.slice(0, 2).toUpperCase() + " logo"}</p>
                 </div>
               )}
               
-              <p className='text-center'>{selectedSerie?.name}</p>
+              <p className='text-center text-xl'>{selectedSerie?.name}</p>
             </>
           ) : (
-            <p className='text-center text-white'>Select a serie</p>
+            <p className='text-center text-white text-xl'>Select a serie</p>
           )}
         </div>
 
@@ -72,13 +72,13 @@ function SeriesFilter({ setFilters, filters }: SeriesFilterProps) {
             onClick={() => {setSelectedSerie(serie); toggleList()}}
             >
               {serie.logo ? (
-                <img src={serie.logo + ".webp"} alt={serie.name} className='text-center max-h-[50%] mx-auto mb-4' />
+                <img src={serie.logo + ".webp"} alt={serie.name} className='text-center max-h-[150px] mx-auto mb-4' />
               ) : (
                 <div className='w-[100px] h-[100px] bg-primary rounded-full flex items-center justify-center mx-auto mb-4'>
                   <p className='text-center text-white'>{serie.name.slice(0, 3).toUpperCase() + " logo"}</p>
                 </div>
               )}
-              <p className='text-center text-white'>{serie.name}</p>
+              <p className='text-center text-white text-xl'>{serie.name}</p>
             </li>
           ))}
         </ul>

@@ -305,54 +305,6 @@
       "updated": "2024-11-06T02:16:30+01:00"
     },
     {
-      "id": "A1-278",
-      "category": "Pokemon",
-      "image": "https://assets.tcgdex.net/en/tcgp/A1/278",
-      "localId": "278",
-      "name": "Machamp ex",
-      "rarity": "None",
-      "set": {
-        "cardCount": {
-          "official": 226,
-          "total": 275
-        },
-        "id": "A1",
-        "logo": "https://assets.tcgdex.net/en/tcgp/A1/logo",
-        "name": "Genetic Apex",
-        "symbol": "https://assets.tcgdex.net/univ/tcgp/A1/symbol"
-      },
-      "variants": {
-        "firstEdition": false,
-        "holo": true,
-        "normal": true,
-        "reverse": true,
-        "wPromo": false
-      },
-      "hp": 180,
-      "types": [
-        "Fighting"
-      ],
-      "stage": "Stage2",
-      "suffix": "EX",
-      "attacks": [
-        {
-          "cost": [
-            "Fighting",
-            "Fighting",
-            "Fighting"
-          ],
-          "name": "Mega Punch",
-          "damage": "120"
-        }
-      ],
-      "retreat": 3,
-      "legal": {
-        "standard": false,
-        "expanded": false
-      },
-      "updated": "2024-11-06T02:16:30+01:00"
-    },
-    {
       "id": "bw6-2",
       "image": "https://assets.tcgdex.net/en/bw/bw6/2",
       "localId": "2",
@@ -365,16 +317,16 @@
       "name": "Team Aqua's Crawdaunt"
     },
     {
-      "id": "base1-4",
-      "image": "https://assets.tcgdex.net/en/base/base1/4",
-      "localId": "4",
-      "name": "Charizard"
-    },
-    {
       "id": "base1-1",
       "localId": "1",
       "name": "Alakazam",
       "image": "https://assets.tcgdex.net/en/base/base1/1"
+    },
+    {
+      "id": "base1-4",
+      "image": "https://assets.tcgdex.net/en/base/base1/4",
+      "localId": "4",
+      "name": "Charizard"
     }
   ],
   "other_collections": [

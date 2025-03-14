@@ -18,17 +18,17 @@ function OrderByFilter({ setFilters, filters, OrderList }: { setFilters: (filter
 
     return (
       <div className='flex flex-col gap-2 relative'>
-        <h1 className='text-white text-center text-4xl font-bold mb-4'>Order by:</h1>
+        <h1 className='text-gold text-center text-4xl font-bold mb-4'>Order by:</h1>
         
         {/*Selected Order*/}
         <div 
-         className='selectedOrder border-2 border-gold rounded-md p-3'
+         className='selectedOrder border-2 border-gold rounded-md p-3 bg-secundary'
           onClick={toggleList}
         >
           {selectedOrder ? (
-            <p className='text-center capitalize'>{selectedOrder}</p>
+            <p className='text-center capitalize text-xl'>{selectedOrder}</p>
           ) : (
-            <p className='text-center text-white'>None</p>
+            <p className='text-center text-white text-xl'>None</p>
           )}
         </div>
 
@@ -41,7 +41,7 @@ function OrderByFilter({ setFilters, filters, OrderList }: { setFilters: (filter
                 key={0}
                 onClick={() => {setSelectedOrder("None"); toggleList()}}
                 >
-                <p className='text-center text-white'>None</p>
+                <p className='text-center text-white text-xl'>None</p>
             </li>
           
           {OrderList.map((Order, index) => (
@@ -50,7 +50,7 @@ function OrderByFilter({ setFilters, filters, OrderList }: { setFilters: (filter
             key={index}
             onClick={() => {setSelectedOrder(Order); toggleList()}}
             >
-              <p className='text-center text-white'>{Order}</p>
+              <p className='text-center text-white text-xl'>{Order}</p>
             </li>
           ))}
         </ul>

@@ -18,12 +18,7 @@ const initialFilters: Filters = {
 
 export async function loader({ params }: Route.LoaderArgs) {
   try {
-    initialFilters.set = params.setId || "base1";
-
-    return await getFilteredCards(
-      initialFilters.set
-    );
-
+    return params.setId || "base1";
   } catch (error) {
     console.error("Error fetching Pokémon cards:", error);
     return []; 
@@ -31,44 +26,36 @@ export async function loader({ params }: Route.LoaderArgs) {
 }
 
 function filters() {
-
-  const [pokemonCardList, setPokemonCardList] = useState<Card[]>(useLoaderData().cards || []);
-
+  const [pokemonCardList, setPokemonCardList] = useState<Card[]>([]);
   const [currentFilters, setCurrentFilters] = useState<Filters>(initialFilters);
-  
   const [searchedPokemonName, setSearchedPokemonName] = useState<string>("");
   
-  const [raritiesList, setRaritiesList] = useState<string[]>([]);
-  
+  const setId = useLoaderData();
+  currentFilters.set = setId;
 
   useEffect(() => {
     const fetchCards = async () => {
       const cards = await getAllPokemonCardsBySet(currentFilters.set || "base1");
-      
-      const uniqueRarities = [...new Set(pokemonCardList.map(card => card.rarity))];
-      setRaritiesList(uniqueRarities as string[]);
-      
       setPokemonCardList(cards || []);
     };
-    fetchCards();
-  }, [currentFilters.set]);
-
-  useEffect(() => {
     
-    const fetchCards = async () => {
-      const cards = await getFilteredCards(
-        currentFilters.set || "base1",
-        currentFilters.orderBy == "None" ? "" : currentFilters.orderBy
-      );
-      setPokemonCardList(cards || []);
-    };
     fetchCards();
-    
-  }, [currentFilters.orderBy]);
+  }, [currentFilters.set]); // Only re-fetch when the set changes
 
-  const handleDeleteFromFavourites = (id: string) => {
-
+  const handleFilterChange = async (newFilters: Filters) => {
+    setCurrentFilters(newFilters);
+    const cards = await getFilteredCards(newFilters.set, newFilters.orderBy);
+    setPokemonCardList(cards || []);
   };
+
+  const handleOrderByChange = async (orderBy: string) => {
+    const newFilters = { ...currentFilters, orderBy };
+    setCurrentFilters(newFilters);
+    const cards = await getFilteredCards(newFilters.set, newFilters.orderBy);
+    setPokemonCardList(cards || []);
+  };
+
+  const handleDeleteFromFavourites = (id: string) => {};
   
   const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -86,9 +73,8 @@ function filters() {
       <FilterBar 
         searchedPokemonName={searchedPokemonName} 
         handleChange={handleChangeName} 
-        setFilters={setCurrentFilters} 
+        setFilters={handleFilterChange}
         filters={currentFilters}
-        raritiesList={raritiesList}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 w-[80%] mx-auto py-12">
@@ -99,11 +85,9 @@ function filters() {
         ) : (
           <p className="text-white text-center col-span-full">No Pokémon cards found.</p>
         )}
-
       </div>
     </main>
   );
 }
 
-
-export default filters
+export default filters;
