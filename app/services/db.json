@@ -66,34 +66,10 @@
       "name": "Charizard"
     },
     {
-      "id": "base1-1",
-      "image": "https://assets.tcgdex.net/en/base/base1/1",
-      "localId": "1",
-      "name": "Alakazam"
-    },
-    {
-      "id": "base1-4",
-      "image": "https://assets.tcgdex.net/en/base/base1/4",
-      "localId": "4",
-      "name": "Charizard"
-    },
-    {
-      "id": "base1-8",
-      "image": "https://assets.tcgdex.net/en/base/base1/8",
-      "localId": "8",
-      "name": "Machamp"
-    },
-    {
       "id": "base1-7",
       "image": "https://assets.tcgdex.net/en/base/base1/7",
       "localId": "7",
       "name": "Hitmonchan"
-    },
-    {
-      "id": "base1-5",
-      "image": "https://assets.tcgdex.net/en/base/base1/5",
-      "localId": "5",
-      "name": "Clefairy"
     },
     {
       "id": "base1-1",
@@ -108,16 +84,34 @@
       "name": "Blastoise"
     },
     {
+      "id": "base1-8",
+      "image": "https://assets.tcgdex.net/en/base/base1/8",
+      "localId": "8",
+      "name": "Machamp"
+    },
+    {
       "id": "base1-3",
       "image": "https://assets.tcgdex.net/en/base/base1/3",
       "localId": "3",
       "name": "Chansey"
     },
     {
-      "id": "base1-8",
-      "image": "https://assets.tcgdex.net/en/base/base1/8",
-      "localId": "8",
-      "name": "Machamp"
+      "id": "base1-12",
+      "image": "https://assets.tcgdex.net/en/base/base1/12",
+      "localId": "12",
+      "name": "Ninetales"
+    },
+    {
+      "id": "swsh4.5-10",
+      "localId": "10",
+      "name": "Dhelmise VMAX",
+      "image": "https://assets.tcgdex.net/en/swsh/swsh4.5/10"
+    },
+    {
+      "id": "A2a-057",
+      "localId": "057",
+      "name": "Probopass ex",
+      "image": "https://assets.tcgdex.net/en/tcgp/A2a/057"
     }
   ],
   "other_collections": [

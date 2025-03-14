@@ -3,7 +3,8 @@ import { Outlet } from 'react-router'
 import Footer from '~/components/Footer'
 import Header from './header'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { ToastContainer } from 'react-toastify';
+import { Bounce, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function mainLayout() {
   
   return (
@@ -13,7 +14,19 @@ function mainLayout() {
         <Outlet />
       </div>
       <Footer />
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
     </>
   )
 }

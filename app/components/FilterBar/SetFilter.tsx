@@ -43,13 +43,13 @@ function SetsFilter({ setFilters, filters }: { setFilters: (filters: Filters) =>
         
         {/*Selected Set*/}
         <div 
-         className='selectedSets border-2 border-gold rounded-md p-3 h-[150px] flex flex-col items-center hover:cursor-pointer justify-center bg-secundary'
+         className='selectedSets border-2 border-gold rounded-md p-10 h-[150px] flex flex-col items-center hover:cursor-pointer justify-center bg-secundary'
           onClick={toggleList}
         >
           {selectedSet ? (
             <>
               {selectedSet.logo ? (
-                <img src={selectedSet.logo + ".webp"} alt={selectedSet?.name} className='text-center max-h-[100px] mx-auto mb-4' />
+                <img src={selectedSet.logo + ".webp"} alt={selectedSet?.name} className='text-center max-h-[100px] mx-auto mb-4 min-w-[50%]' />
               ) : (
                 <div className='w-[100px] h-[100px] rounded-full flex items-center justify-center mx-auto mb-4'>
                   <p className='text-center text-white'>{selectedSet.name.slice(0, 2).toUpperCase() + " logo"}</p>
@@ -67,12 +67,12 @@ function SetsFilter({ setFilters, filters }: { setFilters: (filters: Filters) =>
         <ul className={`flex flex-col ${showSets ? 'block' : 'hidden'} bg-secundary rounded-md h-[700px] overflow-y-auto absolute top-full left-0 w-full`}>
           {Sets.map((Set, index) => (
             <li
-            className={`bg-black w-[100%] py-6 px-4 ${index % 2 === 0 ? "bg-black" : "bg-gray-800"} hover:cursor-pointer hover:bg-gray-500 transition-colors duration-300`}
+            className={`bg-black w-[100%] p-10 ${index % 2 === 0 ? "bg-black" : "bg-gray-800"} hover:cursor-pointer hover:bg-gray-500 transition-colors duration-300`}
             key={index}
             onClick={() => {setSelectedSet(Set); toggleList()}}
             >
               {Set.logo ? (
-                <img src={Set.logo + ".webp"} alt={Set.name} className='text-center max-h-[150px] mx-auto mb-4' />
+                <img src={Set.logo + ".webp"} alt={Set.name} className='text-center max-h-[150px] mx-auto mb-4 min-w-[50%]' />
               ) : (
                 <div className='w-[100px] h-[100px] bg-gold rounded-full flex items-center justify-center mx-auto mb-4'>
                   <p className='text-center text-white'>{Set.name.slice(0, 3).toUpperCase() + " logo"}</p>

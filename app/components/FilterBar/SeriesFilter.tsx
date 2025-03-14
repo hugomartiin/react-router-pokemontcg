@@ -49,7 +49,7 @@ function SeriesFilter({ setFilters, filters }: SeriesFilterProps) {
           {selectedSerie ? (
             <>
               {selectedSerie.logo ? (
-                <img src={selectedSerie.logo + ".webp"} alt={selectedSerie?.name} className='text-center max-h-[100px] mx-auto mb-4 ' />
+                <img src={selectedSerie.logo + ".webp"} alt={selectedSerie?.name} className='text-center max-h-[100px] mx-auto mb-4  min-w-[50%]' />
               ) : (
                 <div className='w-[100px] h-[100px] bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-4'>
                   <p className='text-center text-white'>{selectedSerie.name.slice(0, 2).toUpperCase() + " logo"}</p>
@@ -72,7 +72,7 @@ function SeriesFilter({ setFilters, filters }: SeriesFilterProps) {
             onClick={() => {setSelectedSerie(serie); toggleList()}}
             >
               {serie.logo ? (
-                <img src={serie.logo + ".webp"} alt={serie.name} className='text-center max-h-[150px] mx-auto mb-4' />
+                <img src={serie.logo + ".webp"} alt={serie.name} className='text-center max-h-[150px] mx-auto mb-4 min-w-[50%]' />
               ) : (
                 <div className='w-[100px] h-[100px] bg-primary rounded-full flex items-center justify-center mx-auto mb-4'>
                   <p className='text-center text-white'>{serie.name.slice(0, 3).toUpperCase() + " logo"}</p>

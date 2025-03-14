@@ -26,6 +26,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 }
 
 function filters() {
+  const parameterSet = useLoaderData();
   const [pokemonCardList, setPokemonCardList] = useState<Card[]>([]);
   const [currentFilters, setCurrentFilters] = useState<Filters>(initialFilters);
   const [searchedPokemonName, setSearchedPokemonName] = useState<string>("");
