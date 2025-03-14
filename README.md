@@ -212,5 +212,3 @@ The application is structured into different reusable components:
 - **Footer.tsx** – Displays the footer.
 - **PokemonCard.tsx** – Component for rendering individual Pokémon card.
 - **SetCard.tsx** – Display the set or serie cards.
-- **ToastNotification.tsx** – Handles notifications for user actions of favourites section.
-
